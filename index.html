@@ -874,7 +874,7 @@
             let messages = [];
 
             if (supabaseClient) {
-                const { data, error } = await supabaseClient.from('mural_messages').select('*').order('created_at', { ascending: false });
+                const { data, error } = await supabaseClient.from('emilly_mural_messages').select('*').order('created_at', { ascending: false });
                 if (!error && data) {
                     messages = data;
                 } else {
@@ -918,8 +918,8 @@
             btn.disabled = true;
 
             if (supabaseClient) {
-                const { error } = await supabaseClient.from('mural_messages').insert([{ name: name, message: text }]);
-                if (error) console.error("Erro ao salvar no banco:", error);
+                const { error } = await supabaseClient.from('emilly_mural_messages').insert([{ name: name, message: text }]);
+                if (error) console.error("Erro ao salvar no banco da Emilly:", error);
             } else {
                 const messages = JSON.parse(localStorage.getItem('emilly_messages') || '[]');
                 messages.unshift({ name, text, date: new Date().toLocaleDateString('pt-BR') });
