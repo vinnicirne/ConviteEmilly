@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13 Anos - Emilly Angell</title>
+    <title>Emilly Angell - 13 Anos</title>
 
     <!-- [FEATURE: OPEN GRAPH / WHATSAPP META TAGS] -->
     <meta property="og:title" content="Convite: Festa do Pijama da Emilly Angell ✨" />
-    <meta property="og:description" content="Você foi escolhido(a) para uma noite secreta! 🤫 Venha celebrar os 13 anos da Emilly. Toque para abrir o convite." />
+    <meta property="og:description"
+        content="Você foi escolhido(a) para uma noite secreta! 🤫 Venha celebrar os 13 anos da Emilly. Toque para abrir o convite." />
     <meta property="og:image" content="https://raw.githubusercontent.com/vinnicirne/ConviteEmilly/main/Emilly.png" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#ff9ff3" />
@@ -221,13 +222,20 @@
             border: 4px solid var(--primary);
             box-shadow: 0 0 30px rgba(255, 159, 243, 0.4);
             animation: floatPhoto 4s ease-in-out infinite, pulseProfile 1.5s infinite alternate;
-            background: linear-gradient(135deg, rgba(255,159,243,0.3), rgba(0,0,0,0.2));
+            background: linear-gradient(135deg, rgba(255, 159, 243, 0.3), rgba(0, 0, 0, 0.2));
             z-index: 2;
         }
 
         @keyframes pulseProfile {
-            0% { box-shadow: 0 0 20px rgba(255, 159, 243, 0.4); border-color: rgba(255,159,243, 0.4); }
-            100% { box-shadow: 0 0 50px rgba(255, 159, 243, 1); border-color: var(--primary); }
+            0% {
+                box-shadow: 0 0 20px rgba(255, 159, 243, 0.4);
+                border-color: rgba(255, 159, 243, 0.4);
+            }
+
+            100% {
+                box-shadow: 0 0 50px rgba(255, 159, 243, 1);
+                border-color: var(--primary);
+            }
         }
 
         .photo-frame img {
@@ -255,6 +263,7 @@
         }
 
         @keyframes floatPhoto {
+
             0%,
             100% {
                 transform: translateY(0);
@@ -599,24 +608,72 @@
         }
 
         .start-screen {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #0f0c29; display: flex; align-items: center; justify-content: center;
-            z-index: 10000; cursor: pointer; transition: opacity 1s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f0c29;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            cursor: pointer;
+            transition: opacity 1s ease;
         }
-        .start-screen.hidden { opacity: 0; pointer-events: none; }
-        .start-screen p { font-size: 18px; color: var(--primary); font-weight: 600; animation: pulse-text 2s infinite; }
+
+        .start-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .start-screen p {
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 600;
+            animation: pulse-text 2s infinite;
+        }
+
         @keyframes pulse-text {
-            0% { opacity: 0.5; transform: scale(0.95); }
-            50% { opacity: 1; transform: scale(1.05); text-shadow: 0 0 15px var(--primary); }
-            100% { opacity: 0.5; transform: scale(0.95); }
+            0% {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+                text-shadow: 0 0 15px var(--primary);
+            }
+
+            100% {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
         }
+
         .music-toggle {
-            position: absolute; top: 15px; right: 15px; background: rgba(255, 159, 243, 0.2);
-            border: 1px solid var(--primary); color: #fff; width: 45px; height: 45px;
-            border-radius: 50%; font-size: 20px; cursor: pointer; z-index: 999;
-            backdrop-filter: blur(5px); transition: all 0.3s; display: none;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 159, 243, 0.2);
+            border: 1px solid var(--primary);
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 999;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+            display: none;
         }
-        .music-toggle:hover { background: var(--primary); transform: scale(1.1); }
+
+        .music-toggle:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
@@ -637,7 +694,8 @@
     <div class="intro" id="introScreen">
         <div class="intro-text-container">
             <h1>Você foi escolhido para uma noite secreta...<br><span>Emilly Angell</span></h1>
-            <button class="btn-unlock" onclick="unlockInvite()" ontouchstart="unlockInvite()">O Segredo (Abrir Convite) 🔓</button>
+            <button class="btn-unlock" onclick="unlockInvite()" ontouchstart="unlockInvite()">O Segredo (Abrir Convite)
+                🔓</button>
         </div>
     </div>
 
@@ -649,8 +707,7 @@
             <button id="musicToggle" class="music-toggle" onclick="toggleMusic()">🔊</button>
             <div class="photo-wrapper">
                 <div class="photo-frame">
-                    <img src="Emilly.png"
-                        alt="Emilly Angell" id="emillyPhoto">
+                    <img src="Emilly.png" alt="Emilly Angell" id="emillyPhoto">
                 </div>
                 <div class="age-badge-float" style="text-align: center; line-height: 0.9; padding: 12px 15px;">
                     13<br><span style="font-size: 12px; font-weight: 700; text-transform: uppercase;">anos</span>
@@ -701,7 +758,8 @@
             </div>
 
             <!-- [LINK PARA O MURAL DE ASSINATURAS] -->
-            <a class="btn btn-secondary" onclick="openSPA('viewMural')" style="cursor: pointer; margin-bottom: 20px; font-size: 13px;">
+            <a class="btn btn-secondary" onclick="openSPA('viewMural')"
+                style="cursor: pointer; margin-bottom: 20px; font-size: 13px;">
                 ✍️ Mural de Mensagens
             </a>
 
@@ -723,39 +781,70 @@
         </div> <!-- /viewHome -->
 
         <!-- VIEW: SUGESTOES DE PRESENTE -->
-        <div class="container" id="viewSugestoes" style="display:none; flex-direction:column; animation: fadeInUp 0.8s ease-out forwards;">
+        <div class="container" id="viewSugestoes"
+            style="display:none; flex-direction:column; animation: fadeInUp 0.8s ease-out forwards;">
             <div style="font-size: 50px; margin-bottom: 10px; animation: float 3s ease-in-out infinite;">🎁</div>
-            <h2 style="font-family: 'Dancing Script', cursive; font-size: 30px; color: var(--primary); margin-bottom: 15px; text-shadow: 0 0 15px rgba(255, 159, 243, 0.6);">Sugestões de Presente</h2>
-            <p style="font-size: 14px; color: #ccc; margin-bottom: 25px; line-height: 1.5;">Sua presença é o melhor presente! Mas para quem perguntou o que a Emilly gostaria de ganhar:</p>
+            <h2
+                style="font-family: 'Dancing Script', cursive; font-size: 30px; color: var(--primary); margin-bottom: 15px; text-shadow: 0 0 15px rgba(255, 159, 243, 0.6);">
+                Sugestões de Presente</h2>
+            <p style="font-size: 14px; color: #ccc; margin-bottom: 25px; line-height: 1.5;">Sua presença é o melhor
+                presente! Mas para quem perguntou o que a Emilly gostaria de ganhar:</p>
             <div style="display: grid; gap: 15px; margin-bottom: 30px;">
-                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; padding: 15px; display: flex; align-items: center; gap: 15px; text-align: left;">
-                    <div style="font-size: 28px; background: rgba(255, 159, 243, 0.2); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; min-width: 50px;">👗</div>
-                    <div><strong style="color: #fff; font-size: 16px; display:block;">Roupas / Blusinhas</strong><span style="color: #aaa; font-size: 12px;">Tamanho: M ou 14/16</span></div>
+                <div
+                    style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; padding: 15px; display: flex; align-items: center; gap: 15px; text-align: left;">
+                    <div
+                        style="font-size: 28px; background: rgba(255, 159, 243, 0.2); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; min-width: 50px;">
+                        👗</div>
+                    <div><strong style="color: #fff; font-size: 16px; display:block;">Roupas / Blusinhas</strong><span
+                            style="color: #aaa; font-size: 12px;">Tamanho: M ou 14/16</span></div>
                 </div>
-                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; padding: 15px; display: flex; align-items: center; gap: 15px; text-align: left;">
-                    <div style="font-size: 28px; background: rgba(255, 159, 243, 0.2); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; min-width: 50px;">👟</div>
-                    <div><strong style="color: #fff; font-size: 16px; display:block;">Calçados</strong><span style="color: #aaa; font-size: 12px;">Tamanho 36</span></div>
+                <div
+                    style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; padding: 15px; display: flex; align-items: center; gap: 15px; text-align: left;">
+                    <div
+                        style="font-size: 28px; background: rgba(255, 159, 243, 0.2); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; min-width: 50px;">
+                        👟</div>
+                    <div><strong style="color: #fff; font-size: 16px; display:block;">Calçados</strong><span
+                            style="color: #aaa; font-size: 12px;">Tamanho 36</span></div>
                 </div>
-                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; padding: 15px; display: flex; align-items: center; gap: 15px; text-align: left;">
-                    <div style="font-size: 28px; background: rgba(255, 159, 243, 0.2); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; min-width: 50px;">💄</div>
-                    <div><strong style="color: #fff; font-size: 16px; display:block;">Maquiagens & Skin Care</strong><span style="color: #aaa; font-size: 12px;">Glosses, hidratantes, paletas</span></div>
+                <div
+                    style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; padding: 15px; display: flex; align-items: center; gap: 15px; text-align: left;">
+                    <div
+                        style="font-size: 28px; background: rgba(255, 159, 243, 0.2); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; min-width: 50px;">
+                        💄</div>
+                    <div><strong style="color: #fff; font-size: 16px; display:block;">Maquiagens & Skin
+                            Care</strong><span style="color: #aaa; font-size: 12px;">Glosses, hidratantes,
+                            paletas</span></div>
                 </div>
             </div>
-            <a onclick="closeSPA()" style="cursor:pointer; display: inline-flex; align-items: center; gap: 8px; padding: 12px 25px; border-radius: 50px; background: transparent; color: #fff; font-weight: 600; font-size: 14px; border: 1px solid rgba(255,255,255,0.3); align-self: center;">⬅️ Voltar para o Convite</a>
+            <a onclick="closeSPA()"
+                style="cursor:pointer; display: inline-flex; align-items: center; gap: 8px; padding: 12px 25px; border-radius: 50px; background: transparent; color: #fff; font-weight: 600; font-size: 14px; border: 1px solid rgba(255,255,255,0.3); align-self: center;">⬅️
+                Voltar para o Convite</a>
         </div>
 
         <!-- VIEW: MURAL -->
-        <div class="container" id="viewMural" style="display:none; flex-direction:column; animation: fadeInUp 0.8s ease-out forwards;">
+        <div class="container" id="viewMural"
+            style="display:none; flex-direction:column; animation: fadeInUp 0.8s ease-out forwards;">
             <h2 style="font-size: 45px;">✍️</h2>
-            <h2 style="font-family: 'Dancing Script', cursive; font-size: 32px; color: var(--primary); margin-bottom: 10px; text-shadow: 0 0 15px rgba(255, 159, 243, 0.6);">Mural de Mensagens</h2>
-            <p style="font-size: 14px; color: #ccc; margin-bottom: 15px; line-height: 1.5;">Deixe um recadinho! Ele ficará salvo no nosso mural secreto.</p>
+            <h2
+                style="font-family: 'Dancing Script', cursive; font-size: 32px; color: var(--primary); margin-bottom: 10px; text-shadow: 0 0 15px rgba(255, 159, 243, 0.6);">
+                Mural de Mensagens</h2>
+            <p style="font-size: 14px; color: #ccc; margin-bottom: 15px; line-height: 1.5;">Deixe um recadinho! Ele
+                ficará salvo no nosso mural secreto.</p>
             <div style="width: 100%;">
-                <input type="text" id="spaGuestName" placeholder="Seu nome ou apelido" style="width: 100%; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 12px; color: #fff; font-size: 14px; margin-bottom: 15px; outline: none;" />
-                <textarea id="spaGuestMessage" placeholder="Escreva sua mensagem de carinho aqui..." style="width: 100%; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 12px; color: #fff; font-size: 14px; margin-bottom: 15px; outline: none; resize: none; min-height: 70px;"></textarea>
-                <button onclick="spaAddMessage()" style="font-size: 15px; padding: 12px; width: 100%; background: rgba(255, 159, 243, 0.2); border: 1px solid var(--primary); color: #fff; border-radius: 10px; cursor: pointer; font-weight: 600; margin-bottom: 15px;">Enviar Mensagem 💌</button>
+                <input type="text" id="spaGuestName" placeholder="Seu nome ou apelido"
+                    style="width: 100%; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 12px; color: #fff; font-size: 14px; margin-bottom: 15px; outline: none;" />
+                <textarea id="spaGuestMessage" placeholder="Escreva sua mensagem de carinho aqui..."
+                    style="width: 100%; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 12px; color: #fff; font-size: 14px; margin-bottom: 15px; outline: none; resize: none; min-height: 70px;"></textarea>
+                <button onclick="spaAddMessage()"
+                    style="font-size: 15px; padding: 12px; width: 100%; background: rgba(255, 159, 243, 0.2); border: 1px solid var(--primary); color: #fff; border-radius: 10px; cursor: pointer; font-weight: 600; margin-bottom: 15px;">Enviar
+                    Mensagem 💌</button>
             </div>
-            <div id="spaMessagesList" style="margin-top: 5px; max-height: 250px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; text-align: left; padding-right: 5px;"></div>
-            <a onclick="closeSPA()" style="cursor:pointer; display: inline-flex; align-items: center; gap: 8px; padding: 12px 25px; border-radius: 50px; background: transparent; color: #fff; font-weight: 600; font-size: 14px; border: 1px solid rgba(255,255,255,0.3); margin-top:20px; align-self: center;">⬅️ Voltar para o Convite</a>
+            <div id="spaMessagesList"
+                style="margin-top: 5px; max-height: 250px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; text-align: left; padding-right: 5px;">
+            </div>
+            <a onclick="closeSPA()"
+                style="cursor:pointer; display: inline-flex; align-items: center; gap: 8px; padding: 12px 25px; border-radius: 50px; background: transparent; color: #fff; font-weight: 600; font-size: 14px; border: 1px solid rgba(255,255,255,0.3); margin-top:20px; align-self: center;">⬅️
+                Voltar para o Convite</a>
         </div>
     </div>
 
@@ -774,8 +863,8 @@
     <script>
         // === CONFIGURAR SUPABASE AQUI ===
         const supabaseUrl = 'https://xihkdfdlwfwaxfckhjnl.supabase.co'; // Extraído via Token
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhpaGtkZmRsd2Z3YXhmY2toam5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMjExMjEsImV4cCI6MjA5Mjg5NzEyMX0.4hvCeVI1WlXGo48PLHKSZAz9pk3C8fm1nZCGVjwfaTc'; 
-        
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhpaGtkZmRsd2Z3YXhmY2toam5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMjExMjEsImV4cCI6MjA5Mjg5NzEyMX0.4hvCeVI1WlXGo48PLHKSZAz9pk3C8fm1nZCGVjwfaTc';
+
         let supabaseClient = null;
         try {
             if (window.supabase) {
@@ -802,7 +891,7 @@
         function toggleMusic() {
             const bgMusic = document.getElementById('bgMusic');
             const toggleBtn = document.getElementById('musicToggle');
-            if(bgMusic.paused) {
+            if (bgMusic.paused) {
                 bgMusic.play();
                 toggleBtn.innerText = '🔊';
             } else {
@@ -815,7 +904,7 @@
         function startExperience() {
             const startScreen = document.getElementById('startScreen');
             startScreen.style.opacity = '0';
-            
+
             // Toca som mágico suave
             const magicSound = document.getElementById('openSound');
             magicSound.volume = 0.5;
@@ -838,7 +927,7 @@
 
             // Mostra o controle de música
             document.getElementById('musicToggle').style.display = 'block';
-            
+
             intro.style.opacity = '0';
             setTimeout(() => {
                 intro.style.display = 'none';
@@ -846,7 +935,7 @@
             }, 1000);
         }
 
-        window.onload = function() {
+        window.onload = function () {
             spaLoadMessages();
         };
 
@@ -856,7 +945,7 @@
             document.getElementById('viewSugestoes').style.display = 'none';
             document.getElementById('viewMural').style.display = 'none';
             document.getElementById(viewId).style.display = 'flex';
-            if(viewId === 'viewMural') spaLoadMessages();
+            if (viewId === 'viewMural') spaLoadMessages();
             window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll para o topo suave
         }
 
@@ -870,7 +959,7 @@
         async function spaLoadMessages() {
             const list = document.getElementById('spaMessagesList');
             list.innerHTML = '<p style="color:#888; font-size:13px; text-align:center;">Carregando mensagens da nuvem...</p>';
-            
+
             let messages = [];
 
             if (supabaseClient) {
@@ -887,18 +976,18 @@
             }
 
             list.innerHTML = '';
-            if(messages.length === 0) {
+            if (messages.length === 0) {
                 list.innerHTML = '<p style="color:#888; font-size:13px; text-align:center;">Nenhuma mensagem ainda. Seja a primeira a assinar o mural!</p>';
             }
             messages.forEach(msg => {
                 let dataFormatada = '';
-                if(msg.created_at) {
+                if (msg.created_at) {
                     const dateObj = new Date(msg.created_at);
                     dataFormatada = dateObj.toLocaleDateString('pt-BR');
                 } else {
                     dataFormatada = msg.date || new Date().toLocaleDateString('pt-BR');
                 }
-                
+
                 list.innerHTML += `<div style="background: rgba(255, 159, 243, 0.1); padding: 12px; border-radius: 12px; border-left: 4px solid var(--primary); animation: fadeInText 0.5s ease-out;">
                     <strong style="display:block; color:var(--primary); font-size:14px;">${msg.name}</strong>
                     <span style="font-size:13px; color:#eee; line-height:1.4; display:block; margin: 4px 0;">${msg.message || msg.text}</span>
@@ -910,8 +999,8 @@
         async function spaAddMessage() {
             const name = document.getElementById('spaGuestName').value;
             const text = document.getElementById('spaGuestMessage').value;
-            if(!name || !text) return;
-            
+            if (!name || !text) return;
+
             const btn = document.querySelector('button[onclick="spaAddMessage()"]');
             const oldText = btn.innerText;
             btn.innerText = "Enviando... ⏳";
@@ -925,15 +1014,15 @@
                 messages.unshift({ name, text, date: new Date().toLocaleDateString('pt-BR') });
                 localStorage.setItem('emilly_messages', JSON.stringify(messages));
             }
-            
+
             document.getElementById('spaGuestName').value = '';
             document.getElementById('spaGuestMessage').value = '';
-            
+
             await spaLoadMessages();
-            
+
             btn.innerText = oldText;
             btn.disabled = false;
-            
+
             const toast = document.getElementById('toast');
             toast.innerText = 'Mensagem enviada com carinho! 💖';
             toast.className = 'show';
